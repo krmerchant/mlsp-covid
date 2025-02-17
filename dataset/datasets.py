@@ -8,7 +8,7 @@ from torch.utils.data import Dataset
 class LungDataset(Dataset):
     def __init__(self, csv_file, root_dir):
         self.root_dir = root_dir
-        self.dataset_csv = pd.read_csv(os.path.join(self.root_dir, csv_file))
+        self.dataset_csv = pd.read_csv(csv_file)
 
         self.string_to_label = {
             'COVID': 0,
