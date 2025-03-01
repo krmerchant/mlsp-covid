@@ -4,7 +4,7 @@ import pandas as pd
 from skimage import io
 from torch.utils.data import Dataset
 
-#this is dataset
+#this is dataset for lungs
 class LungDataset(Dataset):
     def __init__(self, csv_file, root_dir):
         self.root_dir = root_dir
