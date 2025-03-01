@@ -3,13 +3,13 @@ import torch
 import pandas as pd
 from skimage import io
 from torch.utils.data import Dataset
-
+from torchvision import transforms
 #this is dataset for lungs
 class LungDataset(Dataset):
     def __init__(self, csv_file, root_dir):
         self.root_dir = root_dir
         self.dataset_csv = pd.read_csv(csv_file)
-
+        self.transform = transforms.CenterCrop(256)
         self.string_to_label = {
             'COVID': 0,
             'NORMAL': 1,
@@ -40,9 +40,11 @@ class LungDataset(Dataset):
         
         ## get image and mask and category integer 
         return_image = torch.tensor(io.imread(image_name))
+        return_image = self.transform(return_image)
         return_lung_mask = torch.tensor(io.imread(mask_name))
         return_category = self.string_to_label[category]
         ##map category to labels using dictionary
+
 
 
         return return_image, return_lung_mask, return_category
