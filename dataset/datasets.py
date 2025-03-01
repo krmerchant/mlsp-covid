@@ -16,6 +16,16 @@ class LungDataset(Dataset):
             'VIRAL PNEUMONIA': 2
         }
 
+
+    def get_sklearn_representation(self):
+      data = []
+      labels = []  
+      for datum, mask, label in self:
+        data.append(data)
+        labels.append(label)
+      return data, labels
+
+
     def __len__(self):
         return len(self.dataset_csv)
 
@@ -27,7 +37,6 @@ class LungDataset(Dataset):
         # pull index from csv file
         image_name = os.path.join(self.root_dir, category,"images/", self.dataset_csv.iloc[index, 0])
         mask_name = os.path.join(self.root_dir, category,"masks/", self.dataset_csv.iloc[index, 0])
-        # normalize image from 0-1 off the bat
         
         ## get image and mask and category integer 
         return_image = torch.tensor(io.imread(image_name))
