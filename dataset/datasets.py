@@ -12,9 +12,14 @@ class LungDataset(Dataset):
         self.transform = transforms.CenterCrop(256)
         self.string_to_label = {
             'COVID': 0,
-            'NORMAL': 1,
-            'VIRAL PNEUMONIA': 2
+            'Normal': 1,
+            'Viral Pneumonia': 2
+            #'Lung_Opacity": 3, if time permitted, need to include in csv file
         }
+
+    def get_category_map(self):
+       category_map = {0: 'COVID', 1: 'Normal', 2: 'Viral Pneumonia', 3: 'Lung_Opacity'}
+       return category_map
 
 
     def get_sklearn_representation(self):
@@ -46,5 +51,13 @@ class LungDataset(Dataset):
         ##map category to labels using dictionary
 
 
+        # apply mask to image
+        #convert lung mask from RGB size [255,255,3] to grayscale size [255,255] to match image's grayscale size
+        #already checked that each pixel is either [0,0,0] or [255,255,255] in lung_mask
+        slice = torch.tensor([[return_lung_mask[i][j][0] for j in range(256)] for i in range(256)])
+        return_masked_image = return_image & slice  
 
-        return return_image, return_lung_mask, return_category
+
+        return return_image, return_lung_mask, return_category, return_masked_image
+    
+       
