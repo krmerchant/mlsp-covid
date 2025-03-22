@@ -4,7 +4,7 @@ import torch.nn as nn
 
 class CustomConvNet(nn.Module):
     def __init__(self, num_classes=10, pretrained=True):
-        super(ResNetModel, self).__init__()
+        super(CustomConvNet, self).__init__()
         
         # Load a pretrained ResNet model (you can choose ResNet18, ResNet34, ResNet50, ResNet101, etc.)
         self.resnet = models.resnet50(pretrained=pretrained)  # You can change this to other ResNet variants
