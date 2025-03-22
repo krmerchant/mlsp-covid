@@ -1,21 +1,20 @@
 import os
 import torch
 import pandas as pd
-from skimage import io
+from skimage import io,color
 from torch.utils.data import Dataset
 from torchvision import transforms
 #this is dataset for lungs
 class LungDataset(Dataset):
-    def __init__(self, csv_file, root_dir):
+    def __init__(self, csv_file, root_dir, transform):
         self.root_dir = root_dir
         self.dataset_csv = pd.read_csv(csv_file)
-        self.transform = transforms.CenterCrop(256)
+        self.transform = transform  
         self.string_to_label = {
             'COVID': 0,
-            'NORMAL': 1,
-            'VIRAL PNEUMONIA': 2
+            'Normal': 1,
+            'Viral Pneumonia': 0 # map these both to abnormal 
         }
-
 
     def get_sklearn_representation(self):
       data = []
@@ -39,12 +38,18 @@ class LungDataset(Dataset):
         mask_name = os.path.join(self.root_dir, category,"masks/", self.dataset_csv.iloc[index, 0])
         
         ## get image and mask and category integer 
-        return_image = torch.tensor(io.imread(image_name))
+        return_image = io.imread(image_name)
+        if len(return_image.shape) == 3 and return_image.shape[2] == 3:
+            return_image = color.rgb2gray(return_image)
+        return_image = torch.tensor(return_image) 
         return_image = self.transform(return_image)
-        return_lung_mask = torch.tensor(io.imread(mask_name))
+    
+        return_lung_mask = torch.tensor(color.rgb2gray(io.imread(mask_name)))
+        return_image =torch.where( return_lung_mask == 1, return_image,0)
+        return_image = return_image*return_lung_mask
         return_category = self.string_to_label[category]
         ##map category to labels using dictionary
 
 
 
-        return return_image, return_lung_mask, return_category
+        return return_image,return_lung_mask,  return_category
