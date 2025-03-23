@@ -6,11 +6,11 @@ from torch.utils.data import DataLoader
 import logging
 import lightning as L
 from models.model import CustomConvNet
-
+from pytorch_lightning.loggers import TensorBoardLogger
 
 
 #logging setup crap
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 formatter = logging.Formatter(
     '[%(levelname)s:  %(asctime)s] - %(name)s  - %(message)s')
 ch = logging.StreamHandler()
@@ -29,14 +29,18 @@ def train(batch_size, dataset,datadir):
     logger.info("Loading dataset..") 
     dataset = LungDataset(dataset,datadir,tf)
     train_loader = DataLoader(dataset, batch_size=batch_size);
-    
+   
     logger.info("Creatin Model ...") 
     conv_net = CustomConvNet(num_classes=2)
 
     logger.info("Initializing Trainer ...") 
     classifier  = LitClassifier(conv_net)
     
-    trainer = L.Trainer()
+    # Initialize TensorBoard logger
+    tb_logger = TensorBoardLogger("logs/", name="my_model")
+
+    # Set up trainer with the logger
+    trainer = L.Trainer(logger=tb_logger, max_epochs=1000)
     trainer.fit(model=classifier,train_dataloaders=train_loader)
     
   # Check if the script is being run directly

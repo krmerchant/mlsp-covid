@@ -46,10 +46,8 @@ class LungDataset(Dataset):
     
         return_lung_mask = torch.tensor(color.rgb2gray(io.imread(mask_name)))
         return_image =torch.where( return_lung_mask == 1, return_image,0)
-        return_image = return_image*return_lung_mask
-        return_image = color.gray2rgb(return_image)
-        return_category = self.string_to_label[category]
-        ##map category to labels using dictionary
+        return_image = torch.tensor(color.gray2rgb(return_image)).permute(2,0,1).float()
+        return_category = self.string_to_label[category]        ##map category to labels using dictionary
 
 
 
