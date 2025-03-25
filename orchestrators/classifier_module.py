@@ -3,10 +3,10 @@ import torch.nn as nn
 import lightning as L
 from torchmetrics.classification import BinaryAccuracy, BinarySpecificity, BinaryROC
 
-import matplotlib.pyplot as plt
 import io
 import PIL.Image
 import numpy as np
+
 
 class LitClassifier(L.LightningModule):
     def __init__(self, classifier:nn.Module):
@@ -15,7 +15,19 @@ class LitClassifier(L.LightningModule):
         self.loss_fn = nn.BCELoss() 
         self.train_acc = BinaryAccuracy() 
         self.train_spec = BinarySpecificity() 
-        self.train_roc = BinaryROC(thresholds=10) 
+        self.train_roc = BinaryROC(thresholds=20)
+    def test_step(self, batch, batch_idx):
+        # training_step defines the train loop.
+        data,_,labels = batch
+        labels =torch.unsqueeze(labels.float(),1) 
+        output = self.classifier(data)
+    
+        print(f'outputs:{output}')
+        print(f'labels:{labels}')
+         
+
+        self.train_roc.update(output,labels.long()) 
+ 
     def training_step(self, batch, batch_idx):
         # training_step defines the train loop.
         data,_,labels = batch
