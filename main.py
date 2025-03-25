@@ -31,7 +31,7 @@ def train(batch_size, dataset,datadir):
     train_loader = DataLoader(dataset, batch_size=batch_size);
    
     logger.info("Creatin Model ...") 
-    conv_net = CustomConvNet(num_classes=2)
+    conv_net = CustomConvNet(num_classes=1)
 
     logger.info("Initializing Trainer ...") 
     classifier  = LitClassifier(conv_net)

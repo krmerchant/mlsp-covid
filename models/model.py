@@ -15,6 +15,7 @@ class CustomConvNet(nn.Module):
 
     def forward(self, x):
         resnet_features = self.resnet(x)
-        classes = self.softmax(resnet_features);
+        print(f'{resnet_features.shape=}') 
+        classes = self.softmax(resnet_features)
         return classes
 
