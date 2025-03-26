@@ -8,9 +8,11 @@ csv_file="./dataset/csv/small_covid_dataset.csv"
 tf = transforms.Compose([transforms.CenterCrop(256), ]);
 dataset = LungDataset(csv_file,data_dir,tf)
 
-train_loader = DataLoader(dataset, batch_size=16);
+#train_loader = DataLoader(dataset, batch_size=16);
+image,lung_mask,label = dataset[5]
+image  = image.permute(1,2,0)
 
-
+print(image)
 print(image.shape)
 print(label)
 #display stuff

@@ -3,7 +3,7 @@ import torchvision.models as models
 import torch.nn as nn
 
 class CustomConvNet(nn.Module):
-    def __init__(self, num_classes=1, pretrained=True):
+    def __init__(self, num_classes=1, pretrained=False):
         super(CustomConvNet, self).__init__()
         
         # Load a pretrained ResNet model (you can choose ResNet18, ResNet34, ResNet50, ResNet101, etc.)
@@ -18,4 +18,3 @@ class CustomConvNet(nn.Module):
         print(f'{resnet_features.shape=}') 
         classes = self.softmax(resnet_features)
         return classes
-
