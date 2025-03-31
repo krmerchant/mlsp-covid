@@ -77,6 +77,35 @@ def plot_tsne_embeddings(embeddings:List, images:List, labels:List ):
     plt.show()
 
 
+@click.command()
+@click.argument('checkpoint')
+@click.argument('dataset')
+@click.argument('datadir')
+def vis_features(checkpoint, dataset,datadir):
+
+    tf = transforms.Compose([transforms.CenterCrop(256), ]);
+   
+    logger.info("Loading dataset..") 
+    dataset = LungDataset(dataset,datadir,tf)
+    test_loader = DataLoader(dataset,batch_size=1);
+   
+    logger.info("Creating Model ...") 
+    conv_net = CustomConvNet(num_classes=1)
+    check = torch.load(checkpoint)
+   
+
+    model = LitClassifier.load_from_checkpoint(checkpoint,classifier=conv_net)
+
+    #we chop of the final layer so we can extract features from it
+    feature_extractor = nn.Sequential(*list(model.classifier.resnet.children())[:-1])
+     
+    embeddings, labels, images = extract_embeddings(feature_extractor, test_loader) 
+    print(images.shape) 
+    print(embeddings.shape) 
+    plot_tsne_embeddings(embeddings,images,labels)
+
+
+
 
 @click.command()
 @click.argument('checkpoint')
@@ -115,7 +144,7 @@ def test(checkpoint, dataset,datadir):
    
     logger.info("Loading dataset..") 
     dataset = LungDataset(dataset,datadir,tf)
-    test_loader = DataLoader(dataset,batch_size=16);
+    test_loader = DataLoader(dataset,batch_size=64);
    
     logger.info("Creatin Model ...") 
     conv_net = CustomConvNet(num_classes=1)
@@ -126,8 +155,6 @@ def test(checkpoint, dataset,datadir):
     trainer.test(model=classifier, ckpt_path=checkpoint,dataloaders=test_loader)
     fig, ax  = classifier.train_roc.plot(score=True)     
 
-    conv_net.resnet = nn.Sequential(*list(model.children())[:-1])
-    extract_embeddings(conv_net.resnet, test_loader) 
     
 
     plt.show()

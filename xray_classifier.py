@@ -1,7 +1,6 @@
 import click
-import training
-import testing 
-
+import classifier_fe
+import classifier_prediction
 
 
 
@@ -11,8 +10,23 @@ def cli():
     pass
 
 
-cli.add_command(training.train)
-cli.add_command(testing.test)
+@cli.group()
+def extract_features():
+    pass
+
+
+
+extract_features.add_command(classifier_fe.train)
+extract_features.add_command(classifier_fe.test)
+extract_features.add_command(classifier_fe.generate_features)
+
+
+@cli.group()
+def predict():
+    pass
+
+
+predict.add_command(classifier_prediction.train_svm)
 
 if __name__ == '__main__':
     cli()
