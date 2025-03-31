@@ -1,13 +1,18 @@
 import click
 import classifier_fe
 import classifier_prediction
-
-
-
+import generate_dataset_csv
 
 @click.group()
 def cli():
     pass
+
+
+@cli.group()
+def dataset():
+    pass
+
+dataset.add_command(generate_dataset_csv.partition_dataset)
 
 
 @cli.group()

@@ -53,7 +53,7 @@ def extract_embeddings(model, data_loader):
 @click.command()
 @click.argument('checkpoint')
 @click.argument('dataset')
-@click.argument('datadir')
+@click.argument('datadir', default='/home/komelmerchant/Desktop/JHUCourseTracking/MachineLearningForSignalProcessing/project/data/COVID-19_Radiography_Dataset')
 def train_svm(checkpoint, dataset,datadir):
 
     tf = transforms.Compose([transforms.CenterCrop(256), ]);
