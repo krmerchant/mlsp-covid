@@ -27,7 +27,20 @@ class LitClassifier(L.LightningModule):
          
 
         self.train_roc.update(output,labels.long()) 
+
+    def validation_step(self, batch, batch_idx):
+        data,_,labels = batch
+        labels =torch.unsqueeze(labels.float(),1) 
+        output = self.classifier(data)
+        loss = self.loss_fn(output,labels)
+        self.log('valid_loss',loss, on_step=False, on_epoch=True) 
+        acc = self.train_acc(output,labels) 
+        self.log('valid_acc',acc, on_step=False, on_epoch=True) 
+        spec = self.train_spec(output,labels)     
+    
+        return loss
  
+
     def training_step(self, batch, batch_idx):
         # training_step defines the train loop.
         data,_,labels = batch

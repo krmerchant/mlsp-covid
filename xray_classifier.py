@@ -2,6 +2,7 @@ import click
 import classifier_fe
 import classifier_prediction
 import generate_dataset_csv
+import utility
 
 @click.group()
 def cli():
@@ -30,8 +31,15 @@ extract_features.add_command(classifier_fe.generate_features)
 def predict():
     pass
 
-
 predict.add_command(classifier_prediction.train_svm)
+
+@cli.group()
+def utils():
+    pass
+
+utils.add_command(utility.cuda_mem)
+
+
 
 if __name__ == '__main__':
     cli()

@@ -11,9 +11,9 @@ class LungDataset(Dataset):
         self.dataset_csv = pd.read_csv(csv_file)
         self.transform = transform  
         self.string_to_label = {
-            'COVID': 0,
-            'Normal': 1,
-            'Viral Pneumonia': 0 # map these both to abnormal 
+            'COVID': 1,
+            'Normal': 0,
+            'Viral Pneumonia': 1 # map these both to abnormal 
         }
 
     def get_sklearn_representation(self):

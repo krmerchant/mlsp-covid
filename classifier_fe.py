@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 from typing import List
 
-
+from lightning.pytorch.callbacks import ModelCheckpoint
 import torch.nn as nn
 import torch
 import numpy as np
@@ -167,12 +167,23 @@ def test(checkpoint, dataset,datadir):
 @click.argument('datadir')
 def train(batch_size, dataset,datadir):
 
+    checkpoint_callback = ModelCheckpoint( monitor='val/loss')
     tf = transforms.Compose([transforms.CenterCrop(256), ]);
    
     logger.info("Loading dataset..") 
     dataset = LungDataset(dataset,datadir,tf)
-    train_loader = DataLoader(dataset, batch_size=batch_size);
-   
+    from torch.utils.data import random_split
+    # Set the proportion for validation data (e.g., 80% for training, 20% for validation)
+    train_size = int(0.9 * len(dataset))  # 80% for training
+    val_size = len(dataset) - train_size  # 20% for validation
+    
+    # Split the dataset
+    train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
+    
+    train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=64, shuffle=False)
+
+     
     logger.info("Creatin Model ...") 
     conv_net = CustomConvNet(num_classes=1)
 
@@ -183,8 +194,8 @@ def train(batch_size, dataset,datadir):
     tb_logger = TensorBoardLogger("logs/", name="my_model")
 
     # Set up trainer with the logger
-    trainer = L.Trainer(logger=tb_logger, max_epochs=1000)
-    trainer.fit(model=classifier,train_dataloaders=train_loader)
+    trainer = L.Trainer(logger=tb_logger, max_epochs=1000, callbacks=[checkpoint_callback])
+    trainer.fit(model=classifier,train_dataloaders=train_loader, val_dataloaders=val_loader)
 
 
 
