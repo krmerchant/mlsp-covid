@@ -1,0 +1,12 @@
+,,,,,,,,,,,
+energy_full_dist_3_angl_2,-11.1504184504033,Class 0,energy,full,dist,3,angl,2,,energy,-11.1504184504033
+mean_full_dist_3_angl_2,-2.34237782282494,Class 0,mean,full,dist,3,angl,2,,mean,-2.34237782282494
+contrast_full_dist_3_angl_2,-0.33181054630372,Class 0,contrast,full,dist,3,angl,2,,contrast,-0.33181054630372
+variance_full_dist_3_angl_2,0.637542900164312,Class 0,variance,full,dist,3,angl,2,,variance,0.637542900164312
+dissimilarity_full_dist_3_angl_2,0.71800253932879,Class 0,dissimilarity,full,dist,3,angl,2,,dissimilarity,0.71800253932879
+correlation_full_dist_3_angl_2,0.998833958158473,Class 0,correlation,full,dist,3,angl,2,,correlation,0.998833958158473
+std_full_dist_3_angl_2,1.20248757334077,Class 0,std,full,dist,3,angl,2,,std,1.20248757334077
+entropy_full_dist_3_angl_2,3.41366214564655,Class 0,entropy,full,dist,3,angl,2,,entropy,3.41366214564655
+ASM_full_dist_3_angl_2,5.90420515176476,Class 0,ASM,full,dist,3,angl,2,,ASM,5.90420515176476
+homogeneity_full_dist_3_angl_2,8.51633439194484,Class 0,homogeneity,full,dist,3,angl,2,,homogeneity,8.51633439194484
+Combined Feature,Weight,Class,,,,,,,,,

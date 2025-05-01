@@ -1,0 +1,19 @@
+{
+    "contrast": 488.42687747035575,
+    "energy": 0.7631378917914321,
+    "entropy": 2.302465614047957,
+    "correlation": 0.9234539133722293,
+    "dissimilarity": 4.6289834486166,
+    "homogeneity": 0.8026458900003678,
+    "ASM": 0.5823794418878716,
+    "mean": 30.016921936758887,
+    "variance": 3190.4105029267125,
+    "std": 56.48371891905412,
+    "datasetID": 23,
+    "imageName": "COVID-1414.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 3,
+    "angl": 0,
+    "normed": true
+}

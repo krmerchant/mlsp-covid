@@ -1,0 +1,19 @@
+{
+    "contrast": 2052.037870230924,
+    "energy": 0.6248979689189437,
+    "entropy": 3.7125616479363135,
+    "correlation": 0.7309081384149606,
+    "dissimilarity": 16.596762048192772,
+    "homogeneity": 0.6433100350446077,
+    "ASM": 0.39049747155902104,
+    "mean": 42.40679907128515,
+    "variance": 3812.894708416205,
+    "std": 61.74864134874714,
+    "datasetID": 276,
+    "imageName": "COVID-789.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 7,
+    "angl": 0,
+    "normed": true
+}

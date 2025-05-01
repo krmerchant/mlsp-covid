@@ -1,0 +1,15 @@
+{
+    "features": [
+        "energy",
+        "entropy",
+        "contrast",
+        "correlation",
+        "homogeneity",
+        "dissimilarity"
+    ],
+    "C": 1,
+    "kernel": "linear",
+    "orderCombo": [
+        "n_test_dist_2_angl_1"
+    ]
+}

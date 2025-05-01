@@ -1,0 +1,19 @@
+{
+    "contrast": 3587.163900414937,
+    "energy": 0.6670527755771959,
+    "entropy": 3.266971374091071,
+    "correlation": 0.45979150115038214,
+    "dissimilarity": 26.312629668049787,
+    "homogeneity": 0.6766562189336158,
+    "ASM": 0.44495940540524087,
+    "mean": 30.84888809647302,
+    "variance": 3329.9245037558894,
+    "std": 57.705498037499765,
+    "datasetID": 1,
+    "imageName": "COVID-5.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 15,
+    "angl": 0,
+    "normed": true
+}

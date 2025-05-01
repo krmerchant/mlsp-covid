@@ -1,0 +1,12 @@
+{
+    "features": [
+        "correlation",
+        "homogeneity",
+        "energy",
+        "entropy",
+        "dissimilarity",
+        "contrast"
+    ],
+    "C": 0.5,
+    "kernel": "rbf"
+}

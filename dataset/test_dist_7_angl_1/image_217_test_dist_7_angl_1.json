@@ -1,0 +1,19 @@
+{
+    "contrast": 232.3334671442688,
+    "energy": 0.7559704367434824,
+    "entropy": 2.4159599759807833,
+    "correlation": 0.855316674800975,
+    "dissimilarity": 3.9840353260869574,
+    "homogeneity": 0.7873953730195601,
+    "ASM": 0.5714913012301315,
+    "mean": 14.81875308794467,
+    "variance": 802.9033989392817,
+    "std": 28.335550090642,
+    "datasetID": 217,
+    "imageName": "COVID-3543.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 3,
+    "angl": 0,
+    "normed": true
+}

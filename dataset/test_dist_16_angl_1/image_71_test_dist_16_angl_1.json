@@ -1,0 +1,19 @@
+{
+    "contrast": 1058.978499483471,
+    "energy": 0.4814731515910084,
+    "entropy": 4.662397338000692,
+    "correlation": 0.5155449821805554,
+    "dissimilarity": 17.357728564049584,
+    "homogeneity": 0.5047945369774303,
+    "ASM": 0.23181639570297813,
+    "mean": 26.8112409607438,
+    "variance": 1091.663330510636,
+    "std": 33.04032884991667,
+    "datasetID": 71,
+    "imageName": "COVID-529.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 14,
+    "angl": 0,
+    "normed": true
+}

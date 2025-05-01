@@ -1,0 +1,19 @@
+{
+    "contrast": 2402.2886214717746,
+    "energy": 0.6313803199927726,
+    "entropy": 3.9229486074285767,
+    "correlation": 0.4994326302143332,
+    "dissimilarity": 21.52031880040323,
+    "homogeneity": 0.6412365428972358,
+    "ASM": 0.3986411084741759,
+    "mean": 26.50233114919355,
+    "variance": 2399.5657392734056,
+    "std": 48.985362500173515,
+    "datasetID": 32,
+    "imageName": "COVID-846.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 8,
+    "angl": 0,
+    "normed": true
+}

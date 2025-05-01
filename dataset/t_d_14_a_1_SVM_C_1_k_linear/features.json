@@ -1,0 +1,19 @@
+{
+    "features": [
+        "entropy",
+        "mean",
+        "energy",
+        "correlation",
+        "homogeneity",
+        "contrast",
+        "dissimilarity",
+        "std",
+        "ASM",
+        "variance"
+    ],
+    "C": 1,
+    "kernel": "linear",
+    "orderCombo": [
+        "test_dist_14_angl_1"
+    ]
+}

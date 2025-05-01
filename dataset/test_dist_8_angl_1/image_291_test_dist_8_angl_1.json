@@ -1,0 +1,19 @@
+{
+    "contrast": 2174.512221213693,
+    "energy": 0.7109436771057631,
+    "entropy": 2.8642616023124985,
+    "correlation": 0.49239170948261,
+    "dissimilarity": 19.00074559128631,
+    "homogeneity": 0.7192839331837608,
+    "ASM": 0.5054409120166636,
+    "mean": 23.269612292531125,
+    "variance": 2141.9195291287288,
+    "std": 46.280876494819424,
+    "datasetID": 291,
+    "imageName": "Normal-6553.png",
+    "label1": 0,
+    "label2": 0,
+    "dist": 15,
+    "angl": 0,
+    "normed": true
+}

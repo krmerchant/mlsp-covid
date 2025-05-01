@@ -1,0 +1,19 @@
+{
+    "contrast": 1929.85013917004,
+    "energy": 0.7844881364620403,
+    "entropy": 2.076405484243618,
+    "correlation": 0.7370617306041587,
+    "dissimilarity": 12.795135374493926,
+    "homogeneity": 0.8000976018264074,
+    "ASM": 0.6154216362496847,
+    "mean": 28.38009235829959,
+    "variance": 3669.777974131146,
+    "std": 60.57869241021257,
+    "datasetID": 135,
+    "imageName": "COVID-1976.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 9,
+    "angl": 0,
+    "normed": true
+}

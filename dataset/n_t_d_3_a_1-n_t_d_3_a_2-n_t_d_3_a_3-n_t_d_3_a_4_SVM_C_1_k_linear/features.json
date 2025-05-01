@@ -1,0 +1,16 @@
+{
+    "features": [
+        "contrast",
+        "correlation",
+        "mean",
+        "variance"
+    ],
+    "C": 1,
+    "kernel": "linear",
+    "orderCombo": [
+        "test_dist_3_angl_1",
+        "test_dist_3_angl_2",
+        "test_dist_3_angl_3",
+        "test_dist_3_angl_4"
+    ]
+}

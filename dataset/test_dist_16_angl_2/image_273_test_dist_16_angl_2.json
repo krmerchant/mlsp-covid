@@ -1,0 +1,19 @@
+{
+    "contrast": 686.1207709194214,
+    "energy": 0.8102481187225021,
+    "entropy": 1.9241252085206006,
+    "correlation": 0.7340139504630909,
+    "dissimilarity": 7.973075929752064,
+    "homogeneity": 0.818730086775326,
+    "ASM": 0.6565020138933538,
+    "mean": 15.382328254132231,
+    "variance": 1289.7683395689019,
+    "std": 35.91334486745703,
+    "datasetID": 273,
+    "imageName": "Viral Pneumonia-1249.png",
+    "label1": 1,
+    "label2": 2,
+    "dist": 14,
+    "angl": 1.5707963267948966,
+    "normed": true
+}

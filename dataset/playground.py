@@ -1,6 +1,8 @@
 from datasets import LungDataset
 from matplotlib import pyplot as plt
 import torch
+from skimage import io
+from skimage.feature import graycomatrix, graycoprops
  
  
  
@@ -25,6 +27,13 @@ def main():
     print(label)
     print(dataset.get_category_map())
     #mkplt(plt,image,lung_mask,slice,masked_image)
+
+    print(image[50][150])
+    print(masked_image[50][150])
+    print(image.shape)
+    print(image.type)
+
+
     mkplt2(plt,image,lung_mask,masked_image)
 
     #dataset.get_sklearn_representation()
@@ -38,10 +47,11 @@ def mkplt(plt,image,lung_mask,slice,masked_image):
     plt.show()
 
 def mkplt2(plt,image,lung_mask,masked_image):
-    figure, axes = plt.subplots(1, 3)
-    axes[0].imshow(image)
-    axes[1].imshow(lung_mask)
-    axes[2].imshow(masked_image)
+    figure, axes = plt.subplots(2, 2)
+    axes[0,0].imshow(image,cmap='gray')
+    axes[0,1].imshow(lung_mask)
+    axes[1,0].imshow(masked_image,cmap='gray')
+    axes[1,1].imshow(masked_image)
     plt.show()
 
 if __name__ == "__main__":

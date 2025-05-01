@@ -1,0 +1,19 @@
+{
+    "contrast": 664.2752057613169,
+    "energy": 0.7159857694841676,
+    "entropy": 2.6556886316733954,
+    "correlation": 0.5656329827915295,
+    "dissimilarity": 10.469907407407408,
+    "homogeneity": 0.7288455316762866,
+    "ASM": 0.5126356221038356,
+    "mean": 14.305571630658438,
+    "variance": 764.6473827943805,
+    "std": 27.652258186165927,
+    "datasetID": 240,
+    "imageName": "COVID-3600.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 13,
+    "angl": 0,
+    "normed": true
+}

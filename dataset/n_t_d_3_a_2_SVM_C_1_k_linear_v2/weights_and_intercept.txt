@@ -1,0 +1,15 @@
+Number of Support Vectors:
+165
+
+Intercept (bias):
+[-0.11388506705487526]
+
+Feature Weights:
+Class 0:
+contrast: 1.3564873702646505
+correlation: 1.0515676847033402
+homogeneity: -0.1400034402759095
+mean: -1.4709131495022971
+std: 1.5364037674836732
+variance: -1.5310785262134683
+

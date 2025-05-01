@@ -1,0 +1,15 @@
+{
+    "features": [
+        "contrast",
+        "correlation",
+        "homogeneity",
+        "mean",
+        "std",
+        "variance"
+    ],
+    "C": 1,
+    "kernel": "linear",
+    "orderCombo": [
+        "test_dist_3_angl_2"
+    ]
+}

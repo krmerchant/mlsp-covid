@@ -1,0 +1,19 @@
+{
+    "contrast": 456.56866939484127,
+    "energy": 0.7967030117310353,
+    "entropy": 2.1041153141421858,
+    "correlation": 0.8493594600151596,
+    "dissimilarity": 5.221912202380952,
+    "homogeneity": 0.8154962158531218,
+    "ASM": 0.6347356889013022,
+    "mean": 17.88783482142857,
+    "variance": 1515.4242989330332,
+    "std": 38.92845102149626,
+    "datasetID": 263,
+    "imageName": "COVID-2228.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 4,
+    "angl": 0,
+    "normed": true
+}

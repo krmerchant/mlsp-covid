@@ -1,0 +1,18 @@
+Test Size: 30%
+Number of files in X_train: 212
+Number of files in X_test: 92
+
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.79      0.72      0.75        61
+         1.0       0.53      0.61      0.57        31
+
+    accuracy                           0.68        92
+   macro avg       0.66      0.67      0.66        92
+weighted avg       0.70      0.68      0.69        92
+
+
+Confusion Matrix:
+[[44, 17],
+ [12, 19]]

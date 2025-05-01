@@ -1,0 +1,13 @@
+{
+    "features": [
+        "correlation",
+        "ASM",
+        "energy",
+        "homogeneity"
+    ],
+    "C": 1,
+    "kernel": "linear",
+    "orderCombo": [
+        "n_test_dist_2_angl_1"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "contrast": 1146.2640435222672,
+    "energy": 0.8001885568183699,
+    "entropy": 2.0019455603760123,
+    "correlation": 0.6741159161325379,
+    "dissimilarity": 10.156534665991902,
+    "homogeneity": 0.8119897545288974,
+    "ASM": 0.6403017264630655,
+    "mean": 18.249462297570847,
+    "variance": 1758.6990286835482,
+    "std": 41.93684571690566,
+    "datasetID": 245,
+    "imageName": "COVID-1988.png",
+    "label1": 1,
+    "label2": 1,
+    "dist": 9,
+    "angl": 0,
+    "normed": true
+}
